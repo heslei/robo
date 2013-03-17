@@ -10,8 +10,6 @@ public class EsquerdaTest {
 		Robo robo = new Robo();
 		Esquerda esquerda = new Esquerda();
 		esquerda.esquerda(robo);
-		esquerda.esquerda(robo);
-		esquerda.esquerda(robo);
 
 		Assert.assertEquals("0 0 O", robo.toString());
 	}
@@ -31,7 +29,8 @@ public class EsquerdaTest {
 		Robo robo = new Robo();
 		Esquerda esquerda = new Esquerda();
 		esquerda.esquerda(robo);
-		
+		esquerda.esquerda(robo);
+		esquerda.esquerda(robo);
 
 		Assert.assertEquals("0 0 L", robo.toString());
 	}
@@ -53,6 +52,8 @@ public class EsquerdaTest {
 		Robo robo = new Robo();
 		robo.setRumo(Rumo.O);
 		Esquerda esquerda = new Esquerda();
+		esquerda.esquerda(robo);
+		esquerda.esquerda(robo);
 		esquerda.esquerda(robo);
 		
 

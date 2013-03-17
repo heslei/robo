@@ -11,6 +11,8 @@ public class DireitaTest {
 		Robo robo = new Robo();
 		Direita direita = new Direita();
 		direita.direita(robo);
+		direita.direita(robo);
+		direita.direita(robo);
 
 		Assert.assertEquals("0 0 O", robo.toString());
 	}
@@ -29,8 +31,6 @@ public class DireitaTest {
 	public void virarDireitaNorteLeste() {
 		Robo robo = new Robo();
 		Direita direita = new Direita();
-		direita.direita(robo);
-		direita.direita(robo);
 		direita.direita(robo);
 
 		Assert.assertEquals("0 0 L", robo.toString());

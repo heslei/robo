@@ -9,19 +9,7 @@ public class Andar implements Comando{
 
 	
 	void andar(Robo robo) {
-		switch (robo.getRumo()) {
-		case N:
-			robo.setY(robo.getY() + 1);
-			break;
-		case S:
-			robo.setY(robo.getY() - 1);
-			break;
-		case L:
-			robo.setX(robo.getX() - 1);
-			break;
-		case O:
-			robo.setX(robo.getX() + 1);
-		}
-
+		Posicao atual = robo.getPosicao();
+		robo.getRumo().andar(atual);
 	}
 }

@@ -23,7 +23,7 @@ public class ControleTest {
 		Controle controle = new Controle(robo);
 		controle.executar("D A");
 		
-		Assert.assertEquals("1 0 O", robo.toString());
+		Assert.assertEquals("1 0 L", robo.toString());
 		
 	}
 	
@@ -55,7 +55,7 @@ public class ControleTest {
 		Robo robo = new Robo();
 		Controle controle = new Controle(robo);
 		controle.executar("D");
-		Assert.assertEquals("0 0 O", robo.toString());
+		Assert.assertEquals("0 0 L", robo.toString());
 		controle.executar("E");
 		Assert.assertEquals("0 0 N", robo.toString());
 		controle.executar("A");
@@ -63,9 +63,9 @@ public class ControleTest {
 		controle.executar("A");
 		Assert.assertEquals("0 2 N", robo.toString());
 		controle.executar("E");
-		Assert.assertEquals("0 2 L", robo.toString());
+		Assert.assertEquals("0 2 O", robo.toString());
 		controle.executar("A");
-		Assert.assertEquals("-1 2 L", robo.toString());
+		Assert.assertEquals("-1 2 O", robo.toString());
 		controle.executar("E");
 		Assert.assertEquals("-1 2 S", robo.toString());
 		controle.executar("A");

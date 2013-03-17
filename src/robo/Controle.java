@@ -2,16 +2,25 @@ package robo;
 
 public class Controle {
 
+	private enum Botoes {
+		A(new Andar()), D(new Direita()), E(new Esquerda());
+
+		private Comando comando;
+
+		private Botoes(Comando comando) {
+			this.comando = comando;
+		}
+
+		public Comando comando() {
+			return comando;
+		}
+
+	}
+
 	private Robo robo;
-	private Andar andar;
-	private Direita direita;
-	private Esquerda esquerda;
 
 	public Controle(Robo robo) {
 		this.robo = robo;
-		this.andar = new Andar();
-		this.direita = new Direita();
-		this.esquerda = new Esquerda();
 	}
 
 	public void executar(String comandos) {
@@ -20,18 +29,8 @@ public class Controle {
 
 		for (String comando : listaComandos) {
 
-			char comandoReal = comando.charAt(0);
-
-			switch (comandoReal) {
-			case 'A':
-				robo.executar(andar);
-				break;
-			case 'D':
-				robo.executar(direita);
-				break;
-			case 'E':
-				robo.executar(esquerda);
-			}
+			Botoes botao = Botoes.valueOf(comando);
+			robo.executar(botao.comando());
 		}
 	}
 

@@ -33,7 +33,7 @@ public class AndarTest {
 		Andar andar = new Andar();
 		andar.andar(robo);
 
-		Assert.assertEquals("-1 0 L", robo.toString());
+		Assert.assertEquals("1 0 L", robo.toString());
 	}
 
 	@Test
@@ -43,6 +43,6 @@ public class AndarTest {
 		Andar andar = new Andar();
 		andar.andar(robo);
 
-		Assert.assertEquals("1 0 O", robo.toString());
+		Assert.assertEquals("-1 0 O", robo.toString());
 	}
 }
