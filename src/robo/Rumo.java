@@ -23,13 +23,12 @@ public enum Rumo {
 	public Rumo esquerda() {
 		return Rumo.valueOf(esquerda);
 	}
+	
+	public int andarX(){
+		return andaX;
+	}
 
-	public void andar(Posicao posicao) {
-		// TODO aqui poderia criar uma nova Posicao com os novos valores e
-		// retorná-lo?
-		// Neste contexto não o fiz para evitar a criação de novos objetos a
-		// cada movimento.
-		posicao.setX(posicao.getX() + andaX);
-		posicao.setY(posicao.getY() + andaY);
+	public int andarY(){
+		return andaY;
 	}
 }

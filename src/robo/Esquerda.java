@@ -3,14 +3,7 @@ package robo;
 
 public class Esquerda implements Comando {
 
-	public void executar(Robo robo) {
-		esquerda(robo);
+	public Robo executar(Robo robo) {
+		return new Robo(robo.getRumo().esquerda(), robo.getX(), robo.getY());
 	}
-
-	void esquerda(Robo robo) {
-
-		Rumo esquerda = robo.getRumo().esquerda();
-		robo.setRumo(esquerda);	
-	}
-
 }

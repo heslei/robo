@@ -1,17 +1,8 @@
 package robo;
 
+public class Direita implements Comando {
 
-public class Direita implements Comando{
-
-	public void executar(Robo robo) {
-		direita(robo);
+	public Robo executar(Robo robo) {
+		return new Robo(robo.getRumo().direita(), robo.getX(), robo.getY());
 	}
-	
-	void direita(Robo robo){
-		
-		Rumo direita = robo.getRumo().direita();
-		robo.setRumo(direita);		
-	}
-
-
 }

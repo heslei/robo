@@ -19,9 +19,15 @@ public class Controle {
 
 	private Robo robo;
 
+	public Controle(){
+		this(new Robo());
+	}
+	
 	public Controle(Robo robo) {
 		this.robo = robo;
 	}
+	
+	
 
 	public void executar(String comandos) {
 
@@ -30,8 +36,12 @@ public class Controle {
 		for (String comando : listaComandos) {
 
 			Botoes botao = Botoes.valueOf(comando);
-			robo.executar(botao.comando());
+			robo = robo.executar(botao.comando());
 		}
+	}
+	
+	public Robo getRobo(){
+		return robo;
 	}
 
 }

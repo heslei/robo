@@ -2,5 +2,5 @@ package robo;
 
 public interface Comando {
 	
-	void executar(Robo robo);
+	Robo executar(Robo robo);
 }

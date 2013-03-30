@@ -1,32 +1,41 @@
 package robo;
 
-
 public class Robo {
-	
-	private Posicao posicao = new Posicao();
-	private Rumo rumo = Rumo.N;
 
-	public void executar(Comando comando) {
-		comando.executar(this);
+	private final Rumo rumo;
+	private final int x;
+	private final int y;
+	
+	public Robo(){
+		this(Rumo.N, 0, 0);
 	}
 
-
-	public Posicao getPosicao() {
-		return posicao;
+	public Robo(Rumo rumo, int x, final int y) {
+		this.rumo = rumo;
+		this.x = x;
+		this.y = y;
 	}
-	
+
+	public Robo executar(Comando comando) {
+		return comando.executar(this);
+	}
+
+	public int getX() {
+		return x;
+	}
+
+	public int getY() {
+		return y;
+	}
+
 	public Rumo getRumo() {
 		return rumo;
-	}
-
-	public void setRumo(Rumo rumo) {
-		this.rumo = rumo;
 	}
 
 	@Override
 	public String toString() {
 
-		return posicao + " " + rumo;
+		return x + " " + y + " " + rumo;
 	}
 
 }

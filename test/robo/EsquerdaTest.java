@@ -6,55 +6,54 @@ import org.junit.Test;
 
 public class EsquerdaTest {
 	@Test
-	public void virarEsquerdaNorteOeste() {
+	public void virarEsquerdaDoNorteParaOeste() {
 		Robo robo = new Robo();
 		Esquerda esquerda = new Esquerda();
-		esquerda.esquerda(robo);
+		robo = esquerda.executar(robo);
 
 		Assert.assertEquals("0 0 O", robo.toString());
 	}
 	
 	@Test
-	public void virarEsquerdaNorteSul() {
+	public void virarEsquerdaDoNorteParaSul() {
 		Robo robo = new Robo();
 		Esquerda esquerda = new Esquerda();
-		esquerda.esquerda(robo);
-		esquerda.esquerda(robo);
+		robo = esquerda.executar(robo);
+		robo = esquerda.executar(robo);
 
 		Assert.assertEquals("0 0 S", robo.toString());
 	}
 	
 	@Test
-	public void virarEsquerdaNorteLeste() {
+	public void virarEsquerdaDoNorteParaLeste() {
 		Robo robo = new Robo();
 		Esquerda esquerda = new Esquerda();
-		esquerda.esquerda(robo);
-		esquerda.esquerda(robo);
-		esquerda.esquerda(robo);
+		robo = esquerda.executar(robo);
+		robo = esquerda.executar(robo);
+		robo = esquerda.executar(robo);
 
 		Assert.assertEquals("0 0 L", robo.toString());
 	}
 	
 	@Test
-	public void virarEsquerdaNorteNorte() {
+	public void virarEsquerda360grausDoNorteParaNorte() {
 		Robo robo = new Robo();
 		Esquerda esquerda = new Esquerda();
-		esquerda.esquerda(robo);
-		esquerda.esquerda(robo);
-		esquerda.esquerda(robo);
-		esquerda.esquerda(robo);
+		robo = esquerda.executar(robo);
+		robo = esquerda.executar(robo);
+		robo = esquerda.executar(robo);
+		robo = esquerda.executar(robo);
 
 		Assert.assertEquals("0 0 N", robo.toString());
 	}
 	
 	@Test
-	public void virarEsquerdaOesteNorte() {
-		Robo robo = new Robo();
-		robo.setRumo(Rumo.O);
+	public void virarEsquerdaDoOesteParaNorte() {
+		Robo robo = new Robo(Rumo.O, 0, 0);
 		Esquerda esquerda = new Esquerda();
-		esquerda.esquerda(robo);
-		esquerda.esquerda(robo);
-		esquerda.esquerda(robo);
+		robo = esquerda.executar(robo);
+		robo = esquerda.executar(robo);
+		robo = esquerda.executar(robo);
 		
 
 		Assert.assertEquals("0 0 N", robo.toString());

@@ -6,74 +6,69 @@ import org.junit.Test;
 public class ControleTest {
 
 	@Test
-	public void executarComandoAnda() {
+	public void andarUmaPosicaoParaNorte() {
 
-		Robo robo = new Robo();
-		Controle controle = new Controle(robo);
+		Controle controle = new Controle();
 		controle.executar("A");
-		
-		Assert.assertEquals("0 1 N", robo.toString());
-		
-	}
-	
-	@Test
-	public void executarComandoDireitaAnda() {
 
-		Robo robo = new Robo();
-		Controle controle = new Controle(robo);
+		Assert.assertEquals("0 1 N", controle.getRobo().toString());
+
+	}
+
+	@Test
+	public void virarDireitaAndarUmaPosicaoParaLeste() {
+
+		Controle controle = new Controle();
 		controle.executar("D A");
-		
-		Assert.assertEquals("1 0 L", robo.toString());
-		
-	}
-	
-	@Test
-	public void executarComandoDireitaDireitaAnda() {
 
-		Robo robo = new Robo();
-		Controle controle = new Controle(robo);
+		Assert.assertEquals("1 0 L", controle.getRobo().toString());
+
+	}
+
+	@Test
+	public void virarDireitaDireitaAndarUmaPosicaoParaSul() {
+
+		Controle controle = new Controle();
 		controle.executar("D D A");
-		
-		Assert.assertEquals("0 -1 S", robo.toString());
-		
-	}
-	
-	@Test
-	public void executarComandoDireitaEsquerdaAndaAndaEsquerdaAndaEquerdaAndaAndaAnda() {
 
-		Robo robo = new Robo();
-		Controle controle = new Controle(robo);
+		Assert.assertEquals("0 -1 S", controle.getRobo().toString());
+
+	}
+
+	@Test
+	public void chegarEm_1n_1n_S_aposExecutarDEAAEAEAAA() {
+
+		Controle controle = new Controle();
 		controle.executar("D E A A E A E A A A");
-		
-		Assert.assertEquals("-1 -1 S", robo.toString());
-		
-	}
-	
-	@Test
-	public void executarCadaPassoComandoDireitaEsquerdaAndaAndaEsquerdaAndaEquerdaAndaAndaAnda() {
 
-		Robo robo = new Robo();
-		Controle controle = new Controle(robo);
+		Assert.assertEquals("-1 -1 S", controle.getRobo().toString());
+
+	}
+
+	@Test
+	public void chegarEm_1n_1n_S_aposExecutar_DEAAEAEAAA_umPassoPorVez() {
+
+		Controle controle = new Controle();
 		controle.executar("D");
-		Assert.assertEquals("0 0 L", robo.toString());
+		Assert.assertEquals("0 0 L", controle.getRobo().toString());
 		controle.executar("E");
-		Assert.assertEquals("0 0 N", robo.toString());
+		Assert.assertEquals("0 0 N", controle.getRobo().toString());
 		controle.executar("A");
-		Assert.assertEquals("0 1 N", robo.toString());
+		Assert.assertEquals("0 1 N", controle.getRobo().toString());
 		controle.executar("A");
-		Assert.assertEquals("0 2 N", robo.toString());
+		Assert.assertEquals("0 2 N", controle.getRobo().toString());
 		controle.executar("E");
-		Assert.assertEquals("0 2 O", robo.toString());
+		Assert.assertEquals("0 2 O", controle.getRobo().toString());
 		controle.executar("A");
-		Assert.assertEquals("-1 2 O", robo.toString());
+		Assert.assertEquals("-1 2 O", controle.getRobo().toString());
 		controle.executar("E");
-		Assert.assertEquals("-1 2 S", robo.toString());
+		Assert.assertEquals("-1 2 S", controle.getRobo().toString());
 		controle.executar("A");
-		Assert.assertEquals("-1 1 S", robo.toString());
+		Assert.assertEquals("-1 1 S", controle.getRobo().toString());
 		controle.executar("A");
-		Assert.assertEquals("-1 0 S", robo.toString());
+		Assert.assertEquals("-1 0 S", controle.getRobo().toString());
 		controle.executar("A");
-		Assert.assertEquals("-1 -1 S", robo.toString());
-		
+		Assert.assertEquals("-1 -1 S", controle.getRobo().toString());
+
 	}
 }
