@@ -33,10 +33,16 @@ public class Controle {
 
 		String[] listaComandos = comandos.split(" ");
 
-		for (String comando : listaComandos) {
+		for (int i = 0; i < listaComandos.length; i++) {
 
+			String comando = listaComandos[i];
+			
 			Botoes botao = Botoes.valueOf(comando);
-			robo = robo.executar(botao.comando());
+			try {
+				robo = robo.executar(botao.comando());
+			} catch (Exception e) {
+				throw new RuntimeException("Erro ao executar o comando " + i, e);
+			}
 		}
 	}
 	

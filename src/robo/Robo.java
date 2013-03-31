@@ -16,7 +16,7 @@ public class Robo {
 		this.y = y;
 	}
 
-	public Robo executar(Comando comando) {
+	public Robo executar(Comando comando) throws Exception {
 		return comando.executar(this);
 	}
 
