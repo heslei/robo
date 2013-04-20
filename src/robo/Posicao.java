@@ -2,10 +2,10 @@ package robo;
 
 public class Posicao {
 
-	private int x;
-	private int y;
+	private final int x;
+	private final int y;
 
-	public Posicao(int x, int y) {
+	public Posicao(final int x, final int y) {
 		this.x = x;
 		this.y = y;
 	}

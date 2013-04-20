@@ -1,5 +1,7 @@
 package robo;
 
+import robo.comando.Comando;
+
 public class Robo {
 
 	private final Rumo rumo;
@@ -10,13 +12,13 @@ public class Robo {
 		this(Rumo.N, 0, 0);
 	}
 
-	public Robo(Rumo rumo, int x, final int y) {
+	public Robo(final Rumo rumo, final int x, final int y) {
 		this.rumo = rumo;
 		this.x = x;
 		this.y = y;
 	}
 
-	public Robo executar(Comando comando) throws Exception {
+	public Robo executar(final Comando comando){
 		return comando.executar(this);
 	}
 

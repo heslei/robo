@@ -1,5 +1,10 @@
 package robo;
 
+import robo.comando.Andar;
+import robo.comando.Comando;
+import robo.comando.Direita;
+import robo.comando.Esquerda;
+
 public class Controle {
 
 	private enum Botoes {
@@ -7,7 +12,7 @@ public class Controle {
 
 		private Comando comando;
 
-		private Botoes(Comando comando) {
+		private Botoes(final Comando comando) {
 			this.comando = comando;
 		}
 
@@ -23,13 +28,13 @@ public class Controle {
 		this(new Robo());
 	}
 	
-	public Controle(Robo robo) {
+	public Controle(final Robo robo) {
 		this.robo = robo;
 	}
 	
 	
 
-	public void executar(String comandos) {
+	public void executar(final String comandos) {
 
 		String[] listaComandos = comandos.split(" ");
 
